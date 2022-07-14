@@ -1,14 +1,13 @@
 import cv2
-import mysqlx
+
 import numpy as np
 import face_recognition
 import os
 from datetime import datetime
 
-
 path = 'images'
 images = []
-classNames = []
+classNames = [] 
 myList = os.listdir(path)
 print(myList)
 
@@ -38,7 +37,6 @@ def markAttendance(name):
             now = datetime.now()
             dtString = now.strftime('%H:%M:%S')
             f.writelines(f'\n{name},{dtString}')
-
 
 
 encodeListKnown = findEncodings(images)
